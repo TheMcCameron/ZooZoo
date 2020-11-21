@@ -11,7 +11,7 @@ namespace ZooZoo.EntityFramework
     public class ZooZooDbContext : DbContext
     {
         public ZooZooDbContext()
-            :base("name=ZooZooDbContext")
+            :base("ZooZooDbContext")
         {
 
         }
