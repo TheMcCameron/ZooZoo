@@ -9,8 +9,6 @@ namespace ZooZoo.Domain
 {
     public class Zoo : DomainObject
     {
-        [Required]
-        [MaxLength(100)]
         public string Name { get; set; }
         public IList<Animal> Animals { get; set; }
     }

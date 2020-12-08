@@ -105,6 +105,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZooZoo.Domain\ZooZoo.Domain.csproj">
+      <Project>{0BF58400-55C1-48A7-9CD7-3452B680FAF5}</Project>
+      <Name>ZooZoo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZooZoo.EntityFramework\ZooZoo.EntityFramework.csproj">
+      <Project>{f29c276e-155f-4434-9038-980327e40a6e}</Project>
+      <Name>ZooZoo.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
