@@ -36,16 +36,25 @@ namespace ZooZoo
                 desAnimal.Zoos.Add(new Zoo {Id = 1});
                 // executes the appropriate commands to implement the changes to the database
                 */
-                var animals =
-                    db.Animals
-                    .Where(a => a.Id == 1)
-                    .Select(a => a.Id);
+                IQueryable<Animal> animals = db.Animals;
+                var filteredAnimals = animals.Where(a => a.Id == 1);
+
+                IQueryable<Zoo> zoos = db.Zoos;
+                var filteredZoos = zoos.ToList().Where(z => z.Id == 1);
+                Zoo desiredZoo = filteredZoos.First();
+
+                foreach (var animal in filteredAnimals)
+                {
+                    animal.Zoos.Add(desiredZoo);
+
+                    MessageBox.Show("Complete!");
+                    MessageBox.Show($"Id: {animal.Id} Name: {animal.Name} Zoos: {animal.Zoos}");
+                }
 
                 db.SaveChangesAsync();
 
             }
             InitializeComponent();
-            MessageBox.Show("COMPLETED");
         }
     }
 }
