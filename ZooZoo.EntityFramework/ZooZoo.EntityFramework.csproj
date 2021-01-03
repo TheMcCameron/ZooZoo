@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202011231632451_AddColumnDietClassificationToAnimalsTable.designer.cs">
       <DependentUpon>202011231632451_AddColumnDietClassificationToAnimalsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012141916000_PopulateZooAnimalsTable.cs" />
+    <Compile Include="Migrations\202012141916000_PopulateZooAnimalsTable.designer.cs">
+      <DependentUpon>202012141916000_PopulateZooAnimalsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZooZooDbContext.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011231632451_AddColumnDietClassificationToAnimalsTable.resx">
       <DependentUpon>202011231632451_AddColumnDietClassificationToAnimalsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012141916000_PopulateZooAnimalsTable.resx">
+      <DependentUpon>202012141916000_PopulateZooAnimalsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

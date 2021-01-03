@@ -8,7 +8,7 @@ namespace ZooZoo.EntityFramework
         public ZooZooDbContext()
             : base("name=ZooZooDbContext")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
         public DbSet<Zoo> Zoos { get; set; }
         public DbSet<Animal> Animals { get; set; }
