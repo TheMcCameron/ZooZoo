@@ -9,12 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooZoo.Domain", "ZooZoo.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooZoo.EntityFramework", "ZooZoo.EntityFramework\ZooZoo.EntityFramework.csproj", "{F29C276E-155F-4434-9038-980327E40A6E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B5C705AB-1D2B-4EE8-8C41-9EC4D5C99C27}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{162A41D6-4FDF-4FC1-AFF1-21CC248C4DEC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".shared", ".shared", "{82A36044-3A06-4522-92EF-B0EE581463AA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,9 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{991D19EA-D2C5-4572-B5F6-0A41BA2BDA57} = {B5C705AB-1D2B-4EE8-8C41-9EC4D5C99C27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93A863F2-897D-41EF-A2D2-F09926D706C4}

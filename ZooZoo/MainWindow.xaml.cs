@@ -14,6 +14,7 @@ namespace ZooZoo
     {
         public MainWindow()
         {
+            UpdateZooAnimalList("test", "test");
             InitializeComponent();
         }
 
