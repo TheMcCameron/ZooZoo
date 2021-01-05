@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZooZoo"
         mc:Ignorable="d"
-        Title="ZooZoo Manager" Height="450" Width="800" FontFamily="Roboto">
+        Title="ZooZoo Manager" Height="450" Width="800" FontFamily="Roboto"
+        DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,17 +19,25 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="37.5"/>
+            <RowDefinition Height="37.5"/>
         </Grid.RowDefinitions>
 
         <Label x:Name="TitleLabel" Grid.ColumnSpan="3" Padding="3" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="24">ZooZoo Manager</Label>
-        <Label x:Name="ZoosLabel" Grid.Column="0" Grid.Row="1" Padding="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">ZOOS</Label>
-        <Label x:Name="AnimalsLabel" Grid.Column="1" Grid.Row="1" Padding="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">ANIMALS</Label>
+        <Label x:Name="ZoosLabel" Grid.Column="0" Grid.Row="1" Padding="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">Zoos</Label>
+        <Label x:Name="AnimalsLabel" Grid.Column="1" Grid.Row="1" Padding="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">Animals</Label>
         <Label x:Name="ZoosAnimalsLabel" Grid.Column="2" Grid.Row="1" Padding="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18">Zoo's Animals</Label>
-        
-        <ListBox x:Name="ZoosListBox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0"></ListBox>
-        <ListBox x:Name="AnimalsListBox"  Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0"></ListBox>
-        <ListBox x:Name="ZoosAnimalsListBox" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0"></ListBox>
-        
+
+        <ListBox x:Name="ZoosListBox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0"  BorderThickness="3"></ListBox>
+        <ListBox x:Name="AnimalsListBox"  Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0" BorderThickness="3"></ListBox>
+        <ListBox x:Name="ZoosAnimalsListBox" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Margin="10, 0, 10, 0" BorderThickness="3"></ListBox>
+
+        <Button x:Name="CreateZooButton" Grid.Column="0" Grid.Row="5" Margin="50, 5" Content="Create Zoo" Command="{Binding CreateZooButtonPressCmd}"/>
+        <Button x:Name="DeleteZooButton" Grid.Column="0" Grid.Row="6" Margin="50, 5, 50, 10" Content="Delete Zoo"/>
+        <Button x:Name="CreateAnimalButton" Grid.Column="1" Grid.Row="5" Margin="50, 5" Content="Create Animal"/>
+        <Button x:Name="DeleteAnimalButton" Grid.Column="1" Grid.Row="6" Margin="50, 5, 50, 10" Content="Delete Animal"/>
+        <Button x:Name="AddAnimalToZooButton" Grid.Column="2" Grid.Row="5" Margin="50, 5" Content="Add Selected Animal to Zoo"/>
+        <Button x:Name="RemoveAnimalFromZooButton" Grid.Column="2" Grid.Row="6" Margin="50, 5, 50, 10" Content="Remove Animal from Zoo"/>
+
     </Grid>
 </Window>
