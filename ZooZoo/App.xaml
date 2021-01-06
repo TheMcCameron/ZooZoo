@@ -1,7 +1,29 @@
-<Application x:Class="ZooZoo.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:ZooZoo" StartupUri="MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+<Application x:Class="ZooZoo.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:ZooZoo" 
+             StartupUri="Views/MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d"
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
   <Application.Resources>
-    <ResourceDictionary>
-      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:ZooZoo.ViewModel" />
-    </ResourceDictionary>
-  </Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ListBoxLabelStyle" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+            <Style x:Key="ListBoxStyle" TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
+                <Setter Property="Margin" Value="10, 0, 10, 0"/>
+                <Setter Property="BorderThickness" Value="3"/>
+            </Style>
+            <Style x:Key="TopRowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Margin" Value="50, 5"/>
+            </Style>
+            <Style x:Key="BottomRowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Margin" Value="50, 5, 50, 10"/>
+            </Style>
+            
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:ZooZoo.ViewModel" />
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
