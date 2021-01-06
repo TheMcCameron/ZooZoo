@@ -9,6 +9,15 @@
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="0, 0.3">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="Linen" Offset="0"></GradientStop>
+                    <GradientStop Color="SandyBrown" Offset="3"></GradientStop>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

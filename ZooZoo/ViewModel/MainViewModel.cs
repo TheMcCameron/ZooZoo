@@ -37,7 +37,7 @@ namespace ZooZoo.ViewModel
 
         private void CreateZooButtonPress()
         {
-            MessageBox.Show("TEST");
+            MessageBox.Show("TEST", "Test Button Press.", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public RelayCommand CreateZooButtonPressCmd { get; private set; }
