@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZooZoo"
         mc:Ignorable="d"
-        Title="ZooZoo Manager" Height="450" Width="800" FontFamily="Roboto"
+        Title="ZooZoo Manager" Height="450" Width="800" FontFamily="Roboto" WindowStartupLocation="CenterScreen"
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
 
     <Grid>
@@ -13,7 +13,7 @@
             <LinearGradientBrush StartPoint="0, 0" EndPoint="0, 0.3">
                 <LinearGradientBrush.GradientStops>
                     <GradientStop Color="Linen" Offset="0"></GradientStop>
-                    <GradientStop Color="SandyBrown" Offset="3"></GradientStop>
+                    <GradientStop Color="DarkGray" Offset="1"></GradientStop>
                 </LinearGradientBrush.GradientStops>
             </LinearGradientBrush>
         </Grid.Background>
@@ -45,7 +45,7 @@
 
         <Button x:Name="CreateZooButton" Grid.Column="0" Grid.Row="5" Content="Create Zoo"  Style="{StaticResource TopRowButtonStyle}" Command="{Binding CreateZooButtonPressCmd}"/>
         <Button x:Name="DeleteZooButton" Grid.Column="0" Grid.Row="6" Content="Delete Zoo" Style="{StaticResource BottomRowButtonStyle}" />
-        <Button x:Name="CreateAnimalButton" Grid.Column="1" Grid.Row="5" Content="Create Animal" Style="{StaticResource TopRowButtonStyle}" />
+        <Button x:Name="CreateAnimalButton" Grid.Column="1" Grid.Row="5" Content="Create Animal" Style="{StaticResource TopRowButtonStyle}" Command="{Binding CreateAnimalButtonPressCmd}"/>
         <Button x:Name="DeleteAnimalButton" Grid.Column="1" Grid.Row="6"  Content="Delete Animal" Style="{StaticResource BottomRowButtonStyle}" />
         <Button x:Name="AddAnimalToZooButton" Grid.Column="2" Grid.Row="5" Content="Add Selected Animal to Zoo" Style="{StaticResource TopRowButtonStyle}"/>
         <Button x:Name="RemoveAnimalFromZooButton" Grid.Column="2" Grid.Row="6" Content="Remove Animal from Zoo" Style="{StaticResource BottomRowButtonStyle}" />

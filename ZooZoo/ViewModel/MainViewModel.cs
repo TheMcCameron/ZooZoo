@@ -1,6 +1,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows;
+using ZooZoo.Views;
 
 namespace ZooZoo.ViewModel
 {
@@ -33,12 +34,19 @@ namespace ZooZoo.ViewModel
             ////}
 
             CreateZooButtonPressCmd = new RelayCommand(() => CreateZooButtonPress());
+            CreateAnimalButtonPressCmd = new RelayCommand(() => CreateAnimalButtonPress());
         }
-
         private void CreateZooButtonPress()
         {
-            MessageBox.Show("TEST", "Test Button Press.", MessageBoxButton.OK, MessageBoxImage.Information);
+            CreateZooWindow createZooWindow = new CreateZooWindow();
+            createZooWindow.Show();
         }
+        private void CreateAnimalButtonPress()
+        {
+            CreateAnimalWindow createAnimalWindow = new CreateAnimalWindow();
+            createAnimalWindow.Show();
+        }
+        public RelayCommand CreateAnimalButtonPressCmd { get; private set; }
 
         public RelayCommand CreateZooButtonPressCmd { get; private set; }
     }

@@ -1,0 +1,28 @@
+﻿<Window x:Class="ZooZoo.Views.CreateAnimalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZooZoo.Views"
+        mc:Ignorable="d"
+        Title="Create Animal"
+        Style="{StaticResource CreateObjectWindowStyle}"
+        DataContext="{Binding CreateAnimalViewModel, Source={StaticResource Locator}}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0, 0" EndPoint="0, 0.3">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="Linen" Offset="0"></GradientStop>
+                <GradientStop Color="DarkGray" Offset="1"></GradientStop>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <StackPanel Margin="30">
+        <Label x:Name="AnimalNameLabel" Content="_Animal Name:" Target="{Binding ElementName=AnimalNameTextBox}" FontWeight="Bold"/>
+        <TextBox x:Name="AnimalNameTextBox" Margin="20, 5" SpellCheck.IsEnabled="True" Language="en-US"/>
+        <Button x:Name="AnimalCreateOKButton" Content="Create" Width="70" Height="30" Margin="10, 5" BorderBrush="Black" BorderThickness="2" Command="{Binding CreateAnimalNameButtonPressCmd}"/>
+    </StackPanel>
+
+</Window>

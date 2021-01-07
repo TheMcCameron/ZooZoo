@@ -42,6 +42,24 @@ namespace ZooZoo.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<CreateZooViewModel>();
+            SimpleIoc.Default.Register<CreateAnimalViewModel>();
+        }
+
+        public CreateAnimalViewModel CreateAnimalViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CreateAnimalViewModel>();
+            }
+        }
+
+        public CreateZooViewModel CreateZooViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CreateZooViewModel>();
+            }
         }
 
         public MainViewModel MainViewModel
