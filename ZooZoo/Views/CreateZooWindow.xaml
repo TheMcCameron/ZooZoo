@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ZooZoo.Views"
         mc:Ignorable="d"
         Title="Create Zoo" 
-        Style="{StaticResource CreateObjectWindowStyle}"
+        Style="{StaticResource CreateZooWindowStyle}"
         DataContext="{Binding CreateZooViewModel, Source={StaticResource Locator}}"
         WindowStartupLocation="CenterScreen">
     <Window.Background>
@@ -21,7 +21,7 @@
     <StackPanel Margin="30">
         <Label x:Name="ZooNameLabel" Content="_Zoo Name:" Target="{Binding ElementName=ZooNameTextBox}" FontWeight="Bold"/>
         <TextBox x:Name="ZooNameTextBox" Margin="20, 5" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button x:Name="ZooCreateOKButton" Content="Create" Width="70" Height="30" Margin="10, 5" BorderBrush="Black" BorderThickness="2" Command="{Binding CreateZooNameButtonPressCmd}"/>
+        <Button x:Name="ZooCreateOKButton" Content="_Create" Width="70" Height="30" Margin="10, 5" BorderBrush="Black" BorderThickness="2" Command="{Binding CreateZooNameButtonPressCmd}"/>
     </StackPanel>
     
 </Window>

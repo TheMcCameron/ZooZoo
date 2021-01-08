@@ -21,13 +21,21 @@
             
             <Style x:Key="TopRowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
                 <Setter Property="Margin" Value="50, 5"/>
+                <Setter Property="FontSize" Value="14"/>
             </Style>
             <Style x:Key="BottomRowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
                 <Setter Property="Margin" Value="50, 5, 50, 10"/>
+                <Setter Property="FontSize" Value="14"/>
             </Style>
             
-            <Style x:Key="CreateObjectWindowStyle" TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
+            <Style x:Key="CreateZooWindowStyle" TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
                 <Setter Property="Height" Value='200'/>
+                <Setter Property="Width" Value="400"/>
+                <Setter Property="ResizeMode" Value="NoResize"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+            </Style>
+            <Style x:Key="CreateAnimalWindowStyle" TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
+                <Setter Property="Height" Value='300'/>
                 <Setter Property="Width" Value="400"/>
                 <Setter Property="ResizeMode" Value="NoResize"/>
                 <Setter Property="FontFamily" Value="Roboto"/>

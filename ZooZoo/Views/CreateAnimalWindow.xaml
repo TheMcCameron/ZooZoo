@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ZooZoo.Views"
         mc:Ignorable="d"
         Title="Create Animal"
-        Style="{StaticResource CreateObjectWindowStyle}"
+        Style="{StaticResource CreateAnimalWindowStyle}"
         DataContext="{Binding CreateAnimalViewModel, Source={StaticResource Locator}}"
         WindowStartupLocation="CenterScreen">
 
@@ -19,10 +19,17 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <StackPanel Margin="30">
-        <Label x:Name="AnimalNameLabel" Content="_Animal Name:" Target="{Binding ElementName=AnimalNameTextBox}" FontWeight="Bold"/>
+    <StackPanel Margin="30, 10">
+        <Label x:Name="AnimalNameLabel" Content="Animal _Name:" Target="{Binding ElementName=AnimalNameTextBox}" FontWeight="Bold"/>
         <TextBox x:Name="AnimalNameTextBox" Margin="20, 5" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button x:Name="AnimalCreateOKButton" Content="Create" Width="70" Height="30" Margin="10, 5" BorderBrush="Black" BorderThickness="2" Command="{Binding CreateAnimalNameButtonPressCmd}"/>
+        <Label x:Name="AnimalDescriptionLabel" Content="Animal _Description" Target="{Binding ElementName=AnimalDescriptionTextBox}" FontWeight="Bold"/>
+        <TextBox x:Name="AnimalDescriptionTextBox" Margin="20, 5" SpellCheck.IsEnabled="True" Language="en-US" TextWrapping="Wrap" AcceptsReturn="True" MaxLines="3"/>
+        <Label x:Name="AnimalDietClassificationLabel" Content="Animal Diet Classification:" FontWeight="Bold"/>
+        <RadioButton x:Name="HerbivoreRadioButton" Content="Herbivore" Margin="20, 0" GroupName="AnimalDietClass"/>
+        <RadioButton x:Name="CarnivoreRadioButton" Content="Carnivore" Margin="20, 0" GroupName="AnimalDietClass"/>
+        <RadioButton x:Name="OmnivoreRadioButton" Content="Omnivore" Margin="20, 0" GroupName="AnimalDietClass"/>
+        <RadioButton x:Name="DetrivoreRadioButton" Content="Detrivore" Margin="20, 0" GroupName="AnimalDietClass"/>
+        <Button x:Name="AnimalCreateOKButton" Content="_Create" Width="70" Height="30" Margin="10, 20" BorderBrush="Black" BorderThickness="2" Command="{Binding CreateAnimalNameButtonPressCmd}"/>
     </StackPanel>
 
 </Window>
