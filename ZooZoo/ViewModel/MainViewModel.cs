@@ -1,7 +1,12 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using System.Windows;
+using System.Collections.Generic;
+using ZooZoo.Domain;
 using ZooZoo.Views;
+using System.Linq;
+using ZooZoo.EntityFramework;
+using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace ZooZoo.ViewModel
 {
@@ -22,6 +27,30 @@ namespace ZooZoo.ViewModel
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
+
+        //TODO:
+        //These Lists may need to be changed to ObservableCollections.
+        public List<Zoo> AllZoos 
+        {
+            get 
+            {
+                using (var dbContext = new ZooZooDbContext())
+                {
+                    return dbContext.Set<Zoo>().ToList();
+                }
+            }
+        }
+        public List<Animal> AllAnimals
+        {
+            get
+            {
+                using (var dbContext = new ZooZooDbContext())
+                {
+                    return dbContext.Set<Animal>().ToList();
+                }
+            }
+        }
+
         public MainViewModel()
         {
             ////if (IsInDesignMode)
@@ -36,6 +65,7 @@ namespace ZooZoo.ViewModel
             CreateZooButtonPressCmd = new RelayCommand(() => CreateZooButtonPress());
             CreateAnimalButtonPressCmd = new RelayCommand(() => CreateAnimalButtonPress());
         }
+
         private void CreateZooButtonPress()
         {
             CreateZooWindow createZooWindow = new CreateZooWindow();
@@ -47,7 +77,6 @@ namespace ZooZoo.ViewModel
             createAnimalWindow.Show();
         }
         public RelayCommand CreateAnimalButtonPressCmd { get; private set; }
-
         public RelayCommand CreateZooButtonPressCmd { get; private set; }
     }
 }

@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using ZooZoo.Domain;
-using ZooZoo.Domain.Models;
 using ZooZoo.EntityFramework;
+using ZooZoo.ViewModel;
 using static ZooZoo.Domain.Models.DietClassification;
 
 namespace ZooZoo
@@ -16,6 +18,34 @@ namespace ZooZoo
         {
             InitializeComponent();
         }
+
+        private void ZoosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void UpdateZooAnimalList(string zooName, string animalName)
         {
@@ -215,9 +245,9 @@ namespace ZooZoo
         {
             using (var dbContext = new ZooZooDbContext())
             {
-                
+
                 Animal newAnimal = new Animal
-                { Name = animalName, Description = animalDescription, DietClassification = dietClassification};
+                { Name = animalName, Description = animalDescription, DietClassification = dietClassification };
                 dbContext.Animals.Add(newAnimal);
                 dbContext.SaveChangesAsync();
                 MessageBox.Show($"{animalName} has been created.");

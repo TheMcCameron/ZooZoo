@@ -39,13 +39,13 @@
         <Label x:Name="AnimalsLabel" Grid.Column="1" Grid.Row="1" Content="Animals" Style="{StaticResource ListBoxLabelStyle}"/>
         <Label x:Name="ZoosAnimalsLabel" Grid.Column="2" Grid.Row="1" Content="Zoo's Animals" Style="{StaticResource ListBoxLabelStyle}"/>
 
-        <ListBox x:Name="ZoosListBox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Style="{StaticResource ListBoxStyle}"/>
-        <ListBox x:Name="AnimalsListBox"  Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Style="{StaticResource ListBoxStyle}"/>
+        <ListBox x:Name="ZoosListBox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Style="{StaticResource ListBoxStyle}" DisplayMemberPath="Name" SelectedValuePath="Id" ItemsSource="{Binding Path=AllZoos}" SelectionChanged="ZoosListBox_SelectionChanged" Tag="Id"/>
+        <ListBox x:Name="AnimalsListBox"  Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Style="{StaticResource ListBoxStyle}" DisplayMemberPath="Name" SelectedValuePath="Id" ItemsSource="{Binding Path=AllAnimals}"/>
         <ListBox x:Name="ZoosAnimalsListBox" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Style="{StaticResource ListBoxStyle}"/>
 
-        <Button x:Name="CreateZooButton" Grid.Column="0" Grid.Row="5" Content="Create Zoo"  Style="{StaticResource TopRowButtonStyle}" Command="{Binding CreateZooButtonPressCmd}" ToolTip="Opens a new window for Zoo creation."/>
+        <Button x:Name="CreateZooButton" Grid.Column="0" Grid.Row="5" Content="Create Zoo"  Style="{StaticResource TopRowButtonStyle}" Command="{Binding Path=CreateZooButtonPressCmd}" ToolTip="Opens a new window for Zoo creation."/>
         <Button x:Name="DeleteZooButton" Grid.Column="0" Grid.Row="6" Content="Delete Zoo" Style="{StaticResource BottomRowButtonStyle}" ToolTip="Deletes a Zoo from the database." />
-        <Button x:Name="CreateAnimalButton" Grid.Column="1" Grid.Row="5" Content="Create Animal" Style="{StaticResource TopRowButtonStyle}" Command="{Binding CreateAnimalButtonPressCmd}" ToolTip="Opens a new window for Animal creation."/>
+        <Button x:Name="CreateAnimalButton" Grid.Column="1" Grid.Row="5" Content="Create Animal" Style="{StaticResource TopRowButtonStyle}" Command="{Binding Path=CreateAnimalButtonPressCmd}" ToolTip="Opens a new window for Animal creation."/>
         <Button x:Name="DeleteAnimalButton" Grid.Column="1" Grid.Row="6"  Content="Delete Animal" Style="{StaticResource BottomRowButtonStyle}" ToolTip="Deletes an animal from the database." />
         <Button x:Name="AddAnimalToZooButton" Grid.Column="2" Grid.Row="5" Content="Add Selected Animal to Zoo" FontSize="12" Style="{StaticResource TopRowButtonStyle}" ToolTip="Adds an Animal to the selected Zoo."/>
         <Button x:Name="RemoveAnimalFromZooButton" Grid.Column="2" Grid.Row="6" Content="Remove Selected Animal from Zoo" FontSize="12" Margin="30, 5, 30, 10" Style="{StaticResource BottomRowButtonStyle}" ToolTip="Removes an Animal from the selected Zoo."/>
